@@ -1,0 +1,678 @@
+<div class="container">
+  <!-- <div class="alert alert-danger" *ngIf="errorMessage">
+    <strong>Error!</strong> {{errorMessage}}
+  </div> -->
+  <!-- <div class="alert alert-success" *ngIf="infoMessage">
+    <strong>Successful!</strong> {{infoMessage}}
+  </div> -->
+  <div class="course-container">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col col-xs-6">
+            <h3 class="panel-title">Payment Reciept</h3>
+            <hr>
+<!-- -------------------------------------------------------------------------------------- -->
+<div class="container-fluid">
+  <form #resumeForm="ngForm">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="shadow-sm card">
+          <div class="card-body">
+            <h4 class="card-title d-flex align-items-center">
+              <i class="material-icons">
+                account_circle
+              </i>
+              Personal Details</h4>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" [(ngModel)]="resume.receiptNo" name="receiptNo" placeholder="Receipt Number"
+                    #ReceiptNo="ngModel" required
+                    [ngClass]="{'is-invalid': ReceiptNo.invalid && (ReceiptNo.touched || resumeForm.submitted) }">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" [(ngModel)]="resume.name" name="name" placeholder="Name"
+                    #Name="ngModel" required
+                    [ngClass]="{'is-invalid': Name.invalid && (Name.touched || resumeForm.submitted) }">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" [(ngModel)]="resume.section" name="section" placeholder="section"
+                    #Section="ngModel" required
+                    [ngClass]="{'is-invalid': Section.invalid && (Section.touched || resumeForm.submitted) }">
+                </div>
+                <div class="form-group">
+                  <div class="form-group">
+                    <textarea class="form-control" [(ngModel)]="resume.address" name="address" rows="3"
+                      placeholder="Address" #Address="ngModel" required
+                      [ngClass]="{'is-invalid': Address.invalid && (Address.touched || resumeForm.submitted) }"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" [(ngModel)]="resume.recieptDate" name="recieptDate"
+                    placeholder="RecieptDate" #RecieptDate="ngModel" required
+                    [ngClass]="{'is-invalid': RecieptDate.invalid && (RecieptDate.touched || resumeForm.submitted) }">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" [(ngModel)]="resume.className" name="className"
+                    placeholder="Class Name." #ClassName="ngModel" required
+                    [ngClass]="{'is-invalid': ClassName.invalid && (ClassName.touched || resumeForm.submitted) }">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" [(ngModel)]="resume.rollNo" name="rollNo"
+                    placeholder="Roll No." #RollNo="ngModel" required
+                    [ngClass]="{'is-invalid': RollNo.invalid && (RollNo.touched || resumeForm.submitted) }">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" [(ngModel)]="resume.contactNo" name="contactNo"
+                    placeholder="Contact No." #ContactNo="ngModel" required
+                    [ngClass]="{'is-invalid': ContactNo.invalid && (ContactNo.touched || resumeForm.submitted) }">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" [(ngModel)]="resume.email" name="emailId"
+                    placeholder="Email ID" #Email="ngModel" required
+                    [ngClass]="{'is-invalid': Email.invalid && (Email.touched || resumeForm.submitted) }">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" [(ngModel)]="resume.socialProfile" name="socialProfile"
+                    placeholder="Social Profile ">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+<!-- ===================================================== -->
+
+<div class="col-md-8">
+  <div class="shadow-sm card">
+    <div class="card-body">
+      <h4 class="card-title d-flex align-items-center">
+        <i class="material-icons">
+          account_circle
+        </i>
+        Fees Details</h4>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="resume.tuitionFee" name="tuitionFee"
+              placeholder="Tuition Fee." #TuitionFee="ngModel" required
+              [ngClass]="{'is-invalid': TuitionFee.invalid && (TuitionFee.touched || resumeForm.submitted) }">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="resume.admissionFee" name="admissionFee"
+              placeholder="Admission Fee." #AdmissionFee="ngModel" required
+              [ngClass]="{'is-invalid': AdmissionFee.invalid && (AdmissionFee.touched || resumeForm.submitted) }">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="resume.transportFee" name="transportFee"
+              placeholder="Transport Fee." #TransportFee="ngModel" required
+              [ngClass]="{'is-invalid': TransportFee.invalid && (TransportFee.touched || resumeForm.submitted) }">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="resume.examinationFee" name="examinationFee"
+              placeholder="Examination Fee." #ExaminationFee="ngModel" required
+              [ngClass]="{'is-invalid': ExaminationFee.invalid && (ExaminationFee.touched || resumeForm.submitted) }">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="resume.miscellaneousFee" name="miscellaneousFee"
+              placeholder="Miscellaneous Fee." #MiscellaneousFee="ngModel" required
+              [ngClass]="{'is-invalid': MiscellaneousFee.invalid && (MiscellaneousFee.touched || resumeForm.submitted) }">
+          </div>
+
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="resume.prantiyaNidhi" name="prantiyaNidhi"
+              placeholder="Prantiya Nidhi." #PrantiyaNidhi="ngModel" required
+              [ngClass]="{'is-invalid': PrantiyaNidhi.invalid && (PrantiyaNidhi.touched || resumeForm.submitted) }">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="resume.compititionFee" name="compititionFee"
+              placeholder="Compitition Fee." #CompititionFee="ngModel" required
+              [ngClass]="{'is-invalid': CompititionFee.invalid && (CompititionFee.touched || resumeForm.submitted) }">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="resume.registrationFee" name="registrationFee"
+              placeholder="Registration Fee." #RegistrationFee="ngModel" required
+              [ngClass]="{'is-invalid': RegistrationFee.invalid && (RegistrationFee.touched || resumeForm.submitted) }">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="resume.libarayFee" name="libarayFee"
+              placeholder="Libaray Fee." #LibarayFee="ngModel" required
+              [ngClass]="{'is-invalid': LibarayFee.invalid && (LibarayFee.touched || resumeForm.submitted) }">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="resume.otherFee" name="otherFee"
+              placeholder="Other Fee." #OtherFee="ngModel" required
+              [ngClass]="{'is-invalid': OtherFee.invalid && (OtherFee.touched || resumeForm.submitted) }">
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+ <div class="col-md-8">
+  <div class="shadow-sm card">
+    <div class="card-body">
+      <h4 class="card-title d-flex align-items-center">
+        <i class="material-icons">
+          account_circle
+        </i>
+        Payment Mode Details</h4>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="resume.receivedByDetail" name="receivedByDetail"
+              placeholder="RECEIVED BY CHEQUE NO." #ReceivedByDetail="ngModel" required
+              [ngClass]="{'is-invalid': ReceivedByDetail.invalid && (ReceivedByDetail.touched || resumeForm.submitted) }">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="resume.transactionId" name="transactionId"
+              placeholder="TRANSACTION ID." #TransactionId="ngModel" required
+              [ngClass]="{'is-invalid': TransactionId.invalid && (TransactionId.touched || resumeForm.submitted) }">
+          </div>
+        
+
+        </div>
+        <div class="col-md-6">
+          
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="resume.paymentReceivedDate" name="paymentReceivedDate"
+              placeholder="TRANSACTION DATE." #PaymentReceivedDate="ngModel" required
+              [ngClass]="{'is-invalid': PaymentReceivedDate.invalid && (PaymentReceivedDate.touched || resumeForm.submitted) }">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="resume.bankName" name="bankName"
+              placeholder="BANK." #BankName="ngModel" required
+              [ngClass]="{'is-invalid': BankName.invalid && (BankName.touched || resumeForm.submitted) }">
+          </div>
+          
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<!-- ================================================================ -->
+
+      
+      <div class="col-md-8">
+        <div class="shadow-sm card action-buttons">
+
+
+          <!-- <button (click)="resumeForm.valid ? generatePdf('print') : ''"
+            class="btn btn-primary d-flex align-items-center justify-content-center">
+            <i class="material-icons">
+              print
+            </i><span>Print PDF</span></button> -->
+            <button 
+                    class="btn btn-primary d-flex align-items-center justify-content-center"
+                    [printStyle]="{
+                      h2 : { 'font-size': '1em'},
+                      p : { 'word-wrap': 'break-all'},
+                      table : { 'table-layout': 'fixed'}}"
+                      printSectionId="invoice-POS"
+                      
+                    matTooltip="Designed for printing
+                    receipts. Print size should be 44mm,
+                    can be changed in ngx-print.component.scss"
+                    ngxPrint
+                    >
+                    <i class="material-icons">
+                      print
+                    </i><span>Reciept</span></button>
+
+
+
+        </div>
+      </div>
+    </div>
+
+
+  </form>
+</div>
+
+
+
+
+<!-- ---------------------------------------------------------------------------------------------- -->
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Instructor</th>
+              <th scope="col" *ngIf="currentUser && currentUser.role === 'STUDENT'">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of courseList;  index as ind">
+              <th scope="row">{{ind}}</th>
+              <td>{{item.name}}</td>
+              <td>{{item.instructor.name}}</td>
+              <td *ngIf="currentUser && currentUser.role === 'STUDENT'">
+                <button class="btn btn-info" (click)="enroll(item)">Enroll</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div> -->
+    </div>
+  </div>
+</div>
+<!-- <app-ngx-print></app-ngx-print> -->
+<!-- <my-test></my-test>
+<testapp-root></testapp-root> -->
+ <!-- ----------------------------------Print---------------command------------------------------ -->
+
+ <!-- [printStyle] are used for printing -->
+<!-- inline styles are needed for proper printing -->
+<!-- <button mat-button
+        color="primary"
+        [printStyle]="{
+          h2 : { 'font-size': '1em'},
+          p : { 'word-wrap': 'break-all'},
+          table : { 'table-layout': 'fixed'}}"
+          printSectionId="invoice-POS"
+          
+        matTooltip="Designed for printing
+        receipts. Print size should be 44mm,
+        can be changed in ngx-print.component.scss"
+        ngxPrint>Print with ngx-print
+</button> -->
+  
+<!-- <button 
+class="btn btn-primary d-flex align-items-center justify-content-center"
+[printStyle]="{
+  h2 : { 'font-size': '1em'},
+  p : { 'word-wrap': 'break-all'},
+  table : { 'table-layout': 'fixed'}}"
+  printSectionId="invoice-POS"
+  
+matTooltip="Designed for printing
+receipts. Print size should be 44mm,
+can be changed in ngx-print.component.scss"
+ngxPrint
+>
+<i class="material-icons">
+  print
+</i><span>Print PDF</span></button> -->
+<div class="invoice-POS" id="invoice-POS" hidden>
+<table>
+  <tr>
+    <th>
+
+
+  <div class="info">
+    <!-- <img src="assets/imgs/SVM_Logo_color.png" width="30" height="30" /> -->
+    <h3 style="text-align: center; border-bottom: 1px solid black; max-width: 85mm;margin-bottom: 5px;"> 
+      <img src="assets/imgs/SVM_Logo_color.png" width="30" height="30" /> 
+      दया प्रकाश सरस्वती विद्या मंदिर 
+      <img src="assets/imgs/logo1.png" width="30" height="30" />
+    </h3>
+    <!-- <h3 style="text-align: center;  max-width: 44mm;"> दया प्रकाश सरस्वती विद्या मंदिर </h3> -->
+    <!-- <img src="assets/imgs/logo1.png" width="30" height="30" /> -->
+    
+  </div>
+
+
+  <!--End Info-->
+
+  <div id="mid">
+    <div class="info">
+      <!-- <h2 style="text-align: center; max-width: 44mm;">Contact Info</h2> -->
+      <p style="text-align: center; max-width: 80mm; margin: 0 0 0px;">
+        
+        A Senior Secondary Public School <br>
+        Affilliated to C.B.S.E. New Delhi <br>
+        Affilliation No. 330695 <br>
+        Mobile : 9386365364, 7070995122 
+      </p>
+      <h4 style="text-align: inherit;border-bottom: 1px solid black; max-width: 80mm; margin: 0 0 0px;">शुल्क पावती (FEE RECEIPT)</h4>
+      <table >
+        <tr class="table-title">
+          <td>
+            Reciept NO: {{resume.receiptNo}}
+          </td>
+          <td class="Hours" style="padding-left: 80px;">
+            Date: {{resume.recieptDate | date:'dd-MM-yyyy'}}
+          </td>
+          </tr>
+        <tr class="table-title">
+          <td>
+            Name: {{resume.name}}
+          </td>
+          <td class="Hours" style="padding-left: 80px;">Class: {{resume.className}} </td>
+         
+          
+        </tr>
+        <tr class="table-title">
+
+          <td class="Hours">Section:{{resume.section}} </td>
+          <td class="Hours" style="padding-left: 80px;">Roll No:{{resume.rollNo}} </td>
+        </tr>
+        </table>
+    </div>
+  </div>
+  <!--End Invoice Mid-->
+
+  <div id="bot">
+    <div id="table">
+      <table>
+        <tr class="table-title">
+          <td>
+            <h2>
+              DESCRIPTION विवरण
+            </h2>
+          </td>
+          <td class="Hours"></td>
+          <td class="Rate"><h2>RS ₹</h2></td>
+        </tr>
+
+        <tr class="service">
+          <td class="table-item"><p class="item-text">
+            विकास शुल्क (Tuition Fee)
+          </p>
+          </td>
+          <td class="table-item"><p class="item-text"></p></td>
+          <td class="table-item"><p class="item-text">{{resume.tuitionFee}}</p></td>
+        </tr>
+
+        <tr class="service">
+          <td class="table-item"><p class="item-text">नामांकन शुल्क (Admission Fee)</p></td>
+          <td class="table-item"><p class="item-text"></p></td>
+          <td class="table-item"><p class="item-text">{{resume.admissionFee}}</p></td>
+        </tr>
+
+        <tr class="service">
+          <td class="table-item"><p class="item-text">वाहन शुल्क (Transpot Fee)</p></td>
+          <td class="table-item"><p class="item-text"></p></td>
+          <td class="table-item"><p class="item-text">{{resume.transportFee}}</p></td>
+        </tr>
+        <tr class="service">
+          <td class="table-item"><p class="item-text">परीक्षा शुल्क (Examination Fee)</p></td>
+          <td class="table-item"><p class="item-text"></p></td>
+          <td class="table-item"><p class="item-text">{{resume.examinationFee}}</p></td>
+        </tr>
+        <tr class="service">
+          <td class="table-item"><p class="item-text">विविध शुल्क (Miscellaneous Fee)</p></td>
+          <td class="table-item"><p class="item-text"></p></td>
+          <td class="table-item"><p class="item-text">{{resume.miscellaneousFee}}</p></td>
+        </tr>
+        <tr class="service">
+          <td class="table-item"><p class="item-text">प्रांतीय निधि (Prantiya Nidhi)</p></td>
+          <td class="table-item"><p class="item-text"></p></td>
+          <td class="table-item"><p class="item-text">{{resume.prantiyaNidhi}}</p></td>
+        </tr>
+        <tr class="service">
+          <td class="table-item"><p class="item-text">प्रतियोगिता शुल्क (Competition Fee )</p></td>
+          <td class="table-item"><p class="item-text"></p></td>
+          <td class="table-item"><p class="item-text">{{resume.compititionFee}}</p></td>
+        </tr>
+        <tr class="service">
+          <td class="table-item"><p class="item-text">पंजीयन शुल्क (Registration Fee)</p></td>
+          <td class="table-item"><p class="item-text"></p></td>
+          <td class="table-item"><p class="item-text">{{resume.registrationFee}}</p></td>
+        </tr>
+        <tr class="service">
+          <td class="table-item"><p class="item-text">पुस्तकालय शुल्क (Library Fee)</p></td>
+          <td class="table-item"><p class="item-text"></p></td>
+          <td class="table-item"><p class="item-text">{{resume.libarayFee}}</p></td>
+        </tr>
+        <tr class="service">
+          <td class="table-item"><p class="item-text">अन्य शुल्क (Other Fee)</p></td>
+          <td class="table-item"><p class="item-text"></p></td>
+          <td class="table-item"><p class="item-text">{{resume.otherFee}}</p></td>
+        </tr>
+        <!-- <tr class="service">
+          <td class="table-item"><p class="item-text"></p></td>
+          <td class="table-item"><p class="item-text"></p></td>
+          <td class="table-item"><p class="item-text"></p></td>
+        </tr> -->
+        <tr class="service">
+          <td class="table-item"><p class="item-text"></p>RECEIVED BY CHEQUE NO : {{resume.receivedByDetail}}</td>
+          
+        </tr>
+        <tr class="service">
+          <td class="table-item"><p class="item-text"></p>TRANSACTION ID : {{resume.transactionId}}</td>
+          
+        </tr>
+        <tr class="service">
+          <td class="table-item"><p class="item-text"></p>DATE : {{resume.paymentReceivedDate | date:'dd-MM-yyyy'}} BANK : {{resume.bankName}}</td>
+          
+        </tr>
+
+        <tr class="table-title">
+
+          <td class="Rate"><h2>Amount in word : {{resume.amountWord}}</h2>
+           
+          </td>
+          
+        </tr>
+
+        <tr class="table-title">
+  
+          <td class="Rate"><h2>कुल योग (Total):</h2></td>
+          <td class="payment"><h2>{{resume.getTotal()}}</h2></td>
+        </tr>
+
+      </table>
+    </div>
+    <!--End Table-->
+
+    <div id="legal-copy">
+      <p class="legal" style="text-align: center; max-width: 15mm;">
+        हस्ताक्षर <br>(signature)
+      </p>
+    </div>
+
+
+  </div>
+
+  
+
+<!--End Invoice-->
+</th>
+<th style="max-width: 170mm;padding-left: 127px;">
+  
+
+    <div class="info">
+      <!-- <img src="assets/imgs/SVM_Logo_color.png" width="30" height="30" /> -->
+      <h3 style="text-align: center; border-bottom: 1px solid black; max-width: 85mm;margin-bottom: 5px;"> 
+        <img src="assets/imgs/SVM_Logo_color.png" width="30" height="30" /> 
+        दया प्रकाश सरस्वती विद्या मंदिर 
+        <img src="assets/imgs/logo1.png" width="30" height="30" />
+      </h3>
+      <!-- <h3 style="text-align: center;  max-width: 44mm;"> दया प्रकाश सरस्वती विद्या मंदिर </h3> -->
+      <!-- <img src="assets/imgs/logo1.png" width="30" height="30" /> -->
+      
+    </div>
+  
+  
+    <!--End Info-->
+  
+    <div id="mid">
+      <div class="info">
+        <!-- <h2 style="text-align: center; max-width: 44mm;">Contact Info</h2> -->
+        <p style="text-align: center; max-width: 80mm; margin: 0 0 0px;">
+                Offical Use only<br>
+          A Senior Secondary Public School <br>
+          Affilliated to C.B.S.E. New Delhi <br>
+          Affilliation No. 330695 <br>
+          Mobile : 9386365364, 7070995122 
+        </p>
+        <h4 style="text-align: inherit;border-bottom: 1px solid black; max-width: 80mm; margin: 0 0 0px;">शुल्क पावती (FEE RECEIPT)</h4>
+        <table>
+          <tr class="table-title">
+            <td>
+              Reciept NO: {{resume.receiptNo}}
+            </td >
+            <td class="Hours" style="padding-left: 80px;">
+              Date: {{resume.recieptDate | date:'dd-MM-yyyy' }}
+            </td>
+            </tr>
+          <tr class="table-title">
+            <td>
+              Name: {{resume.name}}
+            </td>
+            <td class="Hours" style="padding-left: 80px;">Class: {{resume.className}} </td>
+           
+            
+          </tr>
+          <tr class="table-title">
+  
+            <td class="Hours">Section:{{resume.section}} </td>
+            <td class="Hours" style="padding-left: 80px;">Roll No:{{resume.rollNo}} </td>
+          </tr>
+          </table>
+      </div>
+    </div>
+    <!--End Invoice Mid-->
+  
+    <div id="bot">
+      <div id="table">
+        <table>
+          <tr class="table-title">
+            <td>
+              <h2>
+                DESCRIPTION विवरण
+              </h2>
+            </td>
+            <td class="Hours"></td>
+            <td class="Rate"><h2>RS ₹</h2></td>
+          </tr>
+  
+          <tr class="service">
+            <td class="table-item"><p class="item-text">
+              विकास शुल्क (Tuition Fee)
+            </p>
+            </td>
+            <td class="table-item"><p class="item-text"></p></td>
+            <td class="table-item"><p class="item-text">{{resume.tuitionFee}}</p></td>
+          </tr>
+  
+          <tr class="service">
+            <td class="table-item"><p class="item-text">नामांकन शुल्क (Admission Fee)</p></td>
+            <td class="table-item"><p class="item-text"></p></td>
+            <td class="table-item"><p class="item-text">{{resume.admissionFee}}</p></td>
+          </tr>
+  
+          <tr class="service">
+            <td class="table-item"><p class="item-text">वाहन शुल्क (Transpot Fee)</p></td>
+            <td class="table-item"><p class="item-text"></p></td>
+            <td class="table-item"><p class="item-text">{{resume.transportFee}}</p></td>
+          </tr>
+          <tr class="service">
+            <td class="table-item"><p class="item-text">परीक्षा शुल्क (Examination Fee)</p></td>
+            <td class="table-item"><p class="item-text"></p></td>
+            <td class="table-item"><p class="item-text">{{resume.examinationFee}}</p></td>
+          </tr>
+          <tr class="service">
+            <td class="table-item"><p class="item-text">विविध शुल्क (Miscellaneous Fee)</p></td>
+            <td class="table-item"><p class="item-text"></p></td>
+            <td class="table-item"><p class="item-text">{{resume.miscellaneousFee}}</p></td>
+          </tr>
+          <tr class="service">
+            <td class="table-item"><p class="item-text">प्रांतीय निधि (Prantiya Nidhi)</p></td>
+            <td class="table-item"><p class="item-text"></p></td>
+            <td class="table-item"><p class="item-text">{{resume.prantiyaNidhi}}</p></td>
+          </tr>
+          <tr class="service">
+            <td class="table-item"><p class="item-text">प्रतियोगिता शुल्क (Competition Fee )</p></td>
+            <td class="table-item"><p class="item-text"></p></td>
+            <td class="table-item"><p class="item-text">{{resume.compititionFee}}</p></td>
+          </tr>
+          <tr class="service">
+            <td class="table-item"><p class="item-text">पंजीयन शुल्क (Registration Fee)</p></td>
+            <td class="table-item"><p class="item-text"></p></td>
+            <td class="table-item"><p class="item-text">{{resume.registrationFee}}</p></td>
+          </tr>
+          <tr class="service">
+            <td class="table-item"><p class="item-text">पुस्तकालय शुल्क (Library Fee)</p></td>
+            <td class="table-item"><p class="item-text"></p></td>
+            <td class="table-item"><p class="item-text">{{resume.libarayFee}}</p></td>
+          </tr>
+          <tr class="service">
+            <td class="table-item"><p class="item-text">अन्य शुल्क (Other Fee)</p></td>
+            <td class="table-item"><p class="item-text"></p></td>
+            <td class="table-item"><p class="item-text">{{resume.otherFee}}</p></td>
+          </tr>
+          <!-- <tr class="service">
+            <td class="table-item"><p class="item-text"></p></td>
+            <td class="table-item"><p class="item-text"></p></td>
+            <td class="table-item"><p class="item-text"></p></td>
+          </tr> -->
+          <tr class="service">
+            <td class="table-item"><p class="item-text"></p>RECEIVED BY CHEQUE NO : {{resume.receivedByDetail}}</td>
+            
+          </tr>
+          <tr class="service">
+            <td class="table-item"><p class="item-text"></p>TRANSACTION ID : {{resume.transactionId}}</td>
+            
+          </tr>
+          <tr class="service">
+            <td class="table-item"><p class="item-text"></p>DATE : {{resume.paymentReceivedDate | date:'dd-MM-yyyy'}} BANK : {{resume.bankName}}</td>
+            
+          </tr>
+  
+          <tr class="table-title">
+  
+            <td class="Rate"><h2>Amount in word : {{resume.convertToWord()}}</h2>
+
+            </td>
+            
+          </tr>
+  
+          <tr class="table-title">
+    
+            <td class="Rate"><h2>कुल योग (Total):</h2></td>
+            <td class="payment"><h2>{{resume.getTotal()}}</h2></td>
+          </tr>
+  
+        </table>
+      </div>
+      <!--End Table-->
+  
+      <div id="legal-copy">
+        <p class="legal" style="text-align: center; max-width: 15mm;">
+          हस्ताक्षर <br>(signature)
+        </p>
+      </div>
+  
+  
+    </div>
+  
+    
+ 
+</th>
+</tr>
+</table>
+</div>
+  <!-- ----------------------------------Print---------------command------------------------------ -->
