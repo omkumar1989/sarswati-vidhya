@@ -16,6 +16,7 @@ import { UnathorizedComponent } from './components/error/unathorized/unathorized
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgxPrintModule } from 'ngx-print';
+import { SheetJSComponent } from './components/user/home/sheetjs.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NgxPrintModule } from 'ngx-print';
     TeacherComponent,
     ManagerComponent,
     NotFoundComponent,
-    UnathorizedComponent
+    UnathorizedComponent,
+    SheetJSComponent
   ],
   imports: [
     BrowserModule,

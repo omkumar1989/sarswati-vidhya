@@ -197,6 +197,13 @@
             <input type="text" class="form-control" [(ngModel)]="resume.bankName" name="bankName"
               placeholder="BANK." #BankName="ngModel" required
               [ngClass]="{'is-invalid': BankName.invalid && (BankName.touched || resumeForm.submitted) }">
+
+              <!-- <mat-date-range-input>
+                <input matStartDate placeholder="Start date">
+                <input matEndDate placeholder="End date">
+              </mat-date-range-input> -->
+              
+              
           </div>
           
          
@@ -324,6 +331,8 @@ ngxPrint
 <i class="material-icons">
   print
 </i><span>Print PDF</span></button> -->
+<!-- <P>Test</P>
+<sheetjs></sheetjs> -->
 <div class="invoice-POS" id="invoice-POS" hidden>
 <table>
   <tr>
@@ -348,12 +357,10 @@ ngxPrint
   <div id="mid">
     <div class="info">
       <!-- <h2 style="text-align: center; max-width: 44mm;">Contact Info</h2> -->
-      <p style="text-align: center; max-width: 80mm; margin: 0 0 0px;">
+      <p style="text-align: center; max-width: 85mm; margin: 0 0 0px;">
         
-        A Senior Secondary Public School <br>
-        Affilliated to C.B.S.E. New Delhi <br>
-        Affilliation No. 330695 <br>
-        Mobile : 9386365364, 7070995122 
+        A Senior Secondary Public School Affilliated to C.B.S.E. New Delhi,<br> 
+        Affilliation No. 330695 , Mobile : 9386365364, 7070995122 
       </p>
       <h4 style="text-align: inherit;border-bottom: 1px solid black; max-width: 80mm; margin: 0 0 0px;">शुल्क पावती (FEE RECEIPT)</h4>
       <table >
@@ -375,8 +382,8 @@ ngxPrint
         </tr>
         <tr class="table-title">
 
-          <td class="Hours">Section:{{resume.section}} </td>
-          <td class="Hours" style="padding-left: 80px;">Roll No:{{resume.rollNo}} </td>
+          <td class="Hours">Section: {{resume.section}} </td>
+          <td class="Hours" style="padding-left: 80px;">Roll No: {{resume.rollNo}} </td>
         </tr>
         </table>
     </div>
@@ -471,7 +478,7 @@ ngxPrint
 
         <tr class="table-title">
 
-          <td class="Rate"><h2>Amount in word : {{resume.amountWord}}</h2>
+          <td class="Rate"><p>Amount in word : {{resume.amountWord|uppercase}}</p>
            
           </td>
           
@@ -479,8 +486,9 @@ ngxPrint
 
         <tr class="table-title">
   
-          <td class="Rate"><h2>कुल योग (Total):</h2></td>
-          <td class="payment"><h2>{{resume.getTotal()}}</h2></td>
+          <td class="Rate"><h3>कुल योग (Total):</h3></td>
+          <td class="table-item"><p class="item-text"></p></td>
+          <td class="payment"><h3>{{resume.getTotal()}}₹</h3></td>
         </tr>
 
       </table>
@@ -488,8 +496,9 @@ ngxPrint
     <!--End Table-->
 
     <div id="legal-copy">
-      <p class="legal" style="text-align: center; max-width: 15mm;">
-        हस्ताक्षर <br>(signature)
+
+      <p class="legal" style="text-align: right; max-width: 95mm;">
+        (Offical Use only) signature
       </p>
     </div>
 
@@ -521,12 +530,15 @@ ngxPrint
     <div id="mid">
       <div class="info">
         <!-- <h2 style="text-align: center; max-width: 44mm;">Contact Info</h2> -->
-        <p style="text-align: center; max-width: 80mm; margin: 0 0 0px;">
+        <!-- <p style="text-align: center; max-width: 85mm; margin: 0 0 0px;">
                 Offical Use only<br>
-          A Senior Secondary Public School <br>
-          Affilliated to C.B.S.E. New Delhi <br>
-          Affilliation No. 330695 <br>
-          Mobile : 9386365364, 7070995122 
+          A Senior Secondary Public School,Affilliated to C.B.S.E. New Delhi<br>
+          Affilliation No. 330695,Mobile : 9386365364, 7070995122 
+        </p> -->
+        <p style="text-align: center; max-width: 85mm; margin: 0 0 0px;">
+          
+          A Senior Secondary Public School Affilliated to C.B.S.E. New Delhi,<br> 
+          Affilliation No. 330695 , Mobile : 9386365364, 7070995122 
         </p>
         <h4 style="text-align: inherit;border-bottom: 1px solid black; max-width: 80mm; margin: 0 0 0px;">शुल्क पावती (FEE RECEIPT)</h4>
         <table>
@@ -548,8 +560,8 @@ ngxPrint
           </tr>
           <tr class="table-title">
   
-            <td class="Hours">Section:{{resume.section}} </td>
-            <td class="Hours" style="padding-left: 80px;">Roll No:{{resume.rollNo}} </td>
+            <td class="Hours">Section: {{resume.section}} </td>
+            <td class="Hours" style="padding-left: 80px;">Roll No: {{resume.rollNo}} </td>
           </tr>
           </table>
       </div>
@@ -644,7 +656,7 @@ ngxPrint
   
           <tr class="table-title">
   
-            <td class="Rate"><h2>Amount in word : {{resume.convertToWord()}}</h2>
+            <td class="Rate"><p>Amount in word : {{resume.convertToWord()|uppercase}}</p>
 
             </td>
             
@@ -652,8 +664,9 @@ ngxPrint
   
           <tr class="table-title">
     
-            <td class="Rate"><h2>कुल योग (Total):</h2></td>
-            <td class="payment"><h2>{{resume.getTotal()}}</h2></td>
+            <td class="Rate"><h3>कुल योग (Total):</h3></td>
+            <td class="table-item"><p class="item-text"></p></td>
+            <td class="payment"><h3>{{resume.getTotal()}}₹</h3></td>
           </tr>
   
         </table>
@@ -661,8 +674,8 @@ ngxPrint
       <!--End Table-->
   
       <div id="legal-copy">
-        <p class="legal" style="text-align: center; max-width: 15mm;">
-          हस्ताक्षर <br>(signature)
+        <p class="legal" style="text-align: right; max-width: 95mm;">
+         signature
         </p>
       </div>
   

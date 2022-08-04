@@ -55,6 +55,7 @@ export class Resume {
         return this.amountWord;
     
       }
+      
 
 
 }
