@@ -27,22 +27,26 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
+                 Receipt Number
                   <input type="text" class="form-control" [(ngModel)]="resume.receiptNo" name="receiptNo" placeholder="Receipt Number"
                     #ReceiptNo="ngModel" required
                     [ngClass]="{'is-invalid': ReceiptNo.invalid && (ReceiptNo.touched || resumeForm.submitted) }">
                 </div>
                 <div class="form-group">
+                  Name
                   <input type="text" class="form-control" [(ngModel)]="resume.name" name="name" placeholder="Name"
                     #Name="ngModel" required
                     [ngClass]="{'is-invalid': Name.invalid && (Name.touched || resumeForm.submitted) }">
                 </div>
                 <div class="form-group">
+                  Section
                   <input type="text" class="form-control" [(ngModel)]="resume.section" name="section" placeholder="section"
                     #Section="ngModel" required
                     [ngClass]="{'is-invalid': Section.invalid && (Section.touched || resumeForm.submitted) }">
                 </div>
                 <div class="form-group">
                   <div class="form-group">
+                    Address
                     <textarea class="form-control" [(ngModel)]="resume.address" name="address" rows="3"
                       placeholder="Address" #Address="ngModel" required
                       [ngClass]="{'is-invalid': Address.invalid && (Address.touched || resumeForm.submitted) }"></textarea>
@@ -51,34 +55,39 @@
               </div>
               <div class="col-md-6">
                 <div class="form-group">
+                  RecieptDate
                   <input type="text" class="form-control" [(ngModel)]="resume.recieptDate" name="recieptDate"
                     placeholder="RecieptDate" #RecieptDate="ngModel" required
                     [ngClass]="{'is-invalid': RecieptDate.invalid && (RecieptDate.touched || resumeForm.submitted) }">
                 </div>
                 <div class="form-group">
+                  Class Name
                   <input type="text" class="form-control" [(ngModel)]="resume.className" name="className"
                     placeholder="Class Name." #ClassName="ngModel" required
                     [ngClass]="{'is-invalid': ClassName.invalid && (ClassName.touched || resumeForm.submitted) }">
                 </div>
                 <div class="form-group">
+                  Roll No
                   <input type="text" class="form-control" [(ngModel)]="resume.rollNo" name="rollNo"
                     placeholder="Roll No." #RollNo="ngModel" required
                     [ngClass]="{'is-invalid': RollNo.invalid && (RollNo.touched || resumeForm.submitted) }">
                 </div>
                 <div class="form-group">
+                  Contact No
                   <input type="text" class="form-control" [(ngModel)]="resume.contactNo" name="contactNo"
                     placeholder="Contact No." #ContactNo="ngModel" required
                     [ngClass]="{'is-invalid': ContactNo.invalid && (ContactNo.touched || resumeForm.submitted) }">
                 </div>
                 <div class="form-group">
+                  Email ID
                   <input type="text" class="form-control" [(ngModel)]="resume.email" name="emailId"
                     placeholder="Email ID" #Email="ngModel" required
                     [ngClass]="{'is-invalid': Email.invalid && (Email.touched || resumeForm.submitted) }">
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <input type="text" class="form-control" [(ngModel)]="resume.socialProfile" name="socialProfile"
                     placeholder="Social Profile ">
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -101,26 +110,31 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
+            Tuition Fee
             <input type="text" class="form-control" [(ngModel)]="resume.tuitionFee" name="tuitionFee"
               placeholder="Tuition Fee." #TuitionFee="ngModel" required
               [ngClass]="{'is-invalid': TuitionFee.invalid && (TuitionFee.touched || resumeForm.submitted) }">
           </div>
           <div class="form-group">
+            Admission Fee
             <input type="text" class="form-control" [(ngModel)]="resume.admissionFee" name="admissionFee"
               placeholder="Admission Fee." #AdmissionFee="ngModel" required
               [ngClass]="{'is-invalid': AdmissionFee.invalid && (AdmissionFee.touched || resumeForm.submitted) }">
           </div>
           <div class="form-group">
+            Transport Fee
             <input type="text" class="form-control" [(ngModel)]="resume.transportFee" name="transportFee"
               placeholder="Transport Fee." #TransportFee="ngModel" required
               [ngClass]="{'is-invalid': TransportFee.invalid && (TransportFee.touched || resumeForm.submitted) }">
           </div>
           <div class="form-group">
+            Examination Fee
             <input type="text" class="form-control" [(ngModel)]="resume.examinationFee" name="examinationFee"
               placeholder="Examination Fee." #ExaminationFee="ngModel" required
               [ngClass]="{'is-invalid': ExaminationFee.invalid && (ExaminationFee.touched || resumeForm.submitted) }">
           </div>
           <div class="form-group">
+            Miscellaneous Fee
             <input type="text" class="form-control" [(ngModel)]="resume.miscellaneousFee" name="miscellaneousFee"
               placeholder="Miscellaneous Fee." #MiscellaneousFee="ngModel" required
               [ngClass]="{'is-invalid': MiscellaneousFee.invalid && (MiscellaneousFee.touched || resumeForm.submitted) }">
@@ -129,29 +143,37 @@
         </div>
         <div class="col-md-6">
           <div class="form-group">
+            Prantiya Nidhi
             <input type="text" class="form-control" [(ngModel)]="resume.prantiyaNidhi" name="prantiyaNidhi"
               placeholder="Prantiya Nidhi." #PrantiyaNidhi="ngModel" required
               [ngClass]="{'is-invalid': PrantiyaNidhi.invalid && (PrantiyaNidhi.touched || resumeForm.submitted) }">
           </div>
           <div class="form-group">
+            Compitition Fee
             <input type="text" class="form-control" [(ngModel)]="resume.compititionFee" name="compititionFee"
               placeholder="Compitition Fee." #CompititionFee="ngModel" required
               [ngClass]="{'is-invalid': CompititionFee.invalid && (CompititionFee.touched || resumeForm.submitted) }">
           </div>
           <div class="form-group">
+            Registration Fee
             <input type="text" class="form-control" [(ngModel)]="resume.registrationFee" name="registrationFee"
               placeholder="Registration Fee." #RegistrationFee="ngModel" required
               [ngClass]="{'is-invalid': RegistrationFee.invalid && (RegistrationFee.touched || resumeForm.submitted) }">
           </div>
           <div class="form-group">
+            Libaray Fee
             <input type="text" class="form-control" [(ngModel)]="resume.libarayFee" name="libarayFee"
               placeholder="Libaray Fee." #LibarayFee="ngModel" required
               [ngClass]="{'is-invalid': LibarayFee.invalid && (LibarayFee.touched || resumeForm.submitted) }">
           </div>
           <div class="form-group">
+            Other Fee
             <input type="text" class="form-control" [(ngModel)]="resume.otherFee" name="otherFee"
               placeholder="Other Fee." #OtherFee="ngModel" required
               [ngClass]="{'is-invalid': OtherFee.invalid && (OtherFee.touched || resumeForm.submitted) }">
+          </div>
+          <div class="form-group">
+            Total Amount ₹{{resume.getTotal()}}
           </div>
          
         </div>
@@ -174,11 +196,13 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
+            RECEIVED BY CHEQUE NO
             <input type="text" class="form-control" [(ngModel)]="resume.receivedByDetail" name="receivedByDetail"
               placeholder="RECEIVED BY CHEQUE NO." #ReceivedByDetail="ngModel" required
               [ngClass]="{'is-invalid': ReceivedByDetail.invalid && (ReceivedByDetail.touched || resumeForm.submitted) }">
           </div>
           <div class="form-group">
+            TRANSACTION ID
             <input type="text" class="form-control" [(ngModel)]="resume.transactionId" name="transactionId"
               placeholder="TRANSACTION ID." #TransactionId="ngModel" required
               [ngClass]="{'is-invalid': TransactionId.invalid && (TransactionId.touched || resumeForm.submitted) }">
@@ -189,11 +213,13 @@
         <div class="col-md-6">
           
           <div class="form-group">
+            TRANSACTION DATE
             <input type="text" class="form-control" [(ngModel)]="resume.paymentReceivedDate" name="paymentReceivedDate"
               placeholder="TRANSACTION DATE." #PaymentReceivedDate="ngModel" required
               [ngClass]="{'is-invalid': PaymentReceivedDate.invalid && (PaymentReceivedDate.touched || resumeForm.submitted) }">
           </div>
           <div class="form-group">
+            Bank
             <input type="text" class="form-control" [(ngModel)]="resume.bankName" name="bankName"
               placeholder="BANK." #BankName="ngModel" required
               [ngClass]="{'is-invalid': BankName.invalid && (BankName.touched || resumeForm.submitted) }">
