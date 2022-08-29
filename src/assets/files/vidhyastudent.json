@@ -1,0 +1,18 @@
+[
+    {
+    "recieptId":1,
+    "studentName":"om",
+    "className":"A",
+    "address":"gaya",
+    "rollNumber":1,
+    "phoneNumber":1
+},
+{
+    "recieptId":2,
+    "studentName":"om1",
+    "className":"A1",
+    "address":"gaya1",
+    "rollNumber":2,
+    "phoneNumber":2
+}
+]

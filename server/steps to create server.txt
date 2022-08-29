@@ -1,0 +1,23 @@
+step : 
+
+1 . create server folder in angular project 
+2. open command prompt from server folder
+3. run command npm init
+4. press  enter if option is ok
+5 . open site for command : npmjs.com/package/json-server
+6. run command : npm i json-server 
+
+7. run command :  npm install -g json-server
+
+8. create json file where we are going to put details
+command : touch db.json  : if it is working fine other wise create mannually
+
+9: run json server : json-server --watch db.json or if you have create with other name then you can give like : json-server --watch vidhyaStudentDetails.json
+
+
+for existing system we have to run this command
+1. run command : npm i json-server 
+
+2. run command :  npm install -g json-server
+
+3.json-server --watch vidhyaStudentDetails.json

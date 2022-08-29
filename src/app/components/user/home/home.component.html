@@ -26,12 +26,12 @@
               Personal Details</h4>
             <div class="row">
               <div class="col-md-6">
-                <div class="form-group">
+                <!-- <div class="form-group">
                  Receipt Number
-                  <input type="text" class="form-control" [(ngModel)]="resume.receiptNo" name="receiptNo" placeholder="Receipt Number"
+                  <input type="text" class="form-control" [(ngModel)]="resume.id" name="receiptId" placeholder="Receipt Number"
                     #ReceiptNo="ngModel" required
                     [ngClass]="{'is-invalid': ReceiptNo.invalid && (ReceiptNo.touched || resumeForm.submitted) }">
-                </div>
+                </div> -->
                 <div class="form-group">
                   Name
                   <input type="text" class="form-control" [(ngModel)]="resume.name" name="name" placeholder="Name"
@@ -44,22 +44,22 @@
                     #Section="ngModel" required
                     [ngClass]="{'is-invalid': Section.invalid && (Section.touched || resumeForm.submitted) }">
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <div class="form-group">
                     Address
                     <textarea class="form-control" [(ngModel)]="resume.address" name="address" rows="3"
                       placeholder="Address" #Address="ngModel" required
                       [ngClass]="{'is-invalid': Address.invalid && (Address.touched || resumeForm.submitted) }"></textarea>
                   </div>
-                </div>
+                </div> -->
               </div>
               <div class="col-md-6">
-                <div class="form-group">
+                <!-- <div class="form-group">
                   RecieptDate
                   <input type="text" class="form-control" [(ngModel)]="resume.recieptDate" name="recieptDate"
                     placeholder="RecieptDate" #RecieptDate="ngModel" required
                     [ngClass]="{'is-invalid': RecieptDate.invalid && (RecieptDate.touched || resumeForm.submitted) }">
-                </div>
+                </div> -->
                 <div class="form-group">
                   Class Name
                   <input type="text" class="form-control" [(ngModel)]="resume.className" name="className"
@@ -72,18 +72,18 @@
                     placeholder="Roll No." #RollNo="ngModel" required
                     [ngClass]="{'is-invalid': RollNo.invalid && (RollNo.touched || resumeForm.submitted) }">
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                   Contact No
                   <input type="text" class="form-control" [(ngModel)]="resume.contactNo" name="contactNo"
                     placeholder="Contact No." #ContactNo="ngModel" required
                     [ngClass]="{'is-invalid': ContactNo.invalid && (ContactNo.touched || resumeForm.submitted) }">
-                </div>
-                <div class="form-group">
+                </div> -->
+                <!-- <div class="form-group">
                   Email ID
                   <input type="text" class="form-control" [(ngModel)]="resume.email" name="emailId"
                     placeholder="Email ID" #Email="ngModel" required
                     [ngClass]="{'is-invalid': Email.invalid && (Email.touched || resumeForm.submitted) }">
-                </div>
+                </div> -->
                 <!-- <div class="form-group">
                   <input type="text" class="form-control" [(ngModel)]="resume.socialProfile" name="socialProfile"
                     placeholder="Social Profile ">
@@ -107,13 +107,23 @@
           account_circle
         </i>
         Fees Details</h4>
+        
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            Tuition Fee
+             Tuition Fee : Month : from
+             <select  name="fromMonthad" (change)="resume.getAddmissionFromMonth($event.target.value)" >
+              <option [ngValue]="6" selected>Jun</option>
+              <option *ngFor="let country of months" >{{country.name}}</option>
+            </select> 
+            To <select  name="toMonthad" (change)="resume.getAddmissionToMonth($event.target.value)" >
+              <option [ngValue]="6" selected>Jun</option>
+              <option *ngFor="let country of months" >{{country.name}}</option>
+            </select>
             <input type="text" class="form-control" [(ngModel)]="resume.tuitionFee" name="tuitionFee"
               placeholder="Tuition Fee." #TuitionFee="ngModel" required
               [ngClass]="{'is-invalid': TuitionFee.invalid && (TuitionFee.touched || resumeForm.submitted) }">
+              
           </div>
           <div class="form-group">
             Admission Fee
@@ -122,7 +132,14 @@
               [ngClass]="{'is-invalid': AdmissionFee.invalid && (AdmissionFee.touched || resumeForm.submitted) }">
           </div>
           <div class="form-group">
-            Transport Fee
+            Transport Fee : Month : from
+            <select  name="fromMonthts" (change)="resume.getTransmissionFromMonth($event.target.value)" >
+              <option [ngValue]="6" selected>Jun</option>
+              <option *ngFor="let country of months" >{{country.name}}</option>
+            </select> To <select  name="toMonthts" (change)="resume.getTransmissionToMonth($event.target.value)" >
+              <option [ngValue]="6" selected>Jun</option>
+              <option *ngFor="let country of months" >{{country.name}}</option>
+            </select>
             <input type="text" class="form-control" [(ngModel)]="resume.transportFee" name="transportFee"
               placeholder="Transport Fee." #TransportFee="ngModel" required
               [ngClass]="{'is-invalid': TransportFee.invalid && (TransportFee.touched || resumeForm.submitted) }">
@@ -143,9 +160,9 @@
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            Prantiya Nidhi
+            Activity Fee
             <input type="text" class="form-control" [(ngModel)]="resume.prantiyaNidhi" name="prantiyaNidhi"
-              placeholder="Prantiya Nidhi." #PrantiyaNidhi="ngModel" required
+              placeholder="Activity Fee." #PrantiyaNidhi="ngModel" required
               [ngClass]="{'is-invalid': PrantiyaNidhi.invalid && (PrantiyaNidhi.touched || resumeForm.submitted) }">
           </div>
           <div class="form-group">
@@ -196,7 +213,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            RECEIVED BY CHEQUE NO
+            RECEIVED BY 
             <input type="text" class="form-control" [(ngModel)]="resume.receivedByDetail" name="receivedByDetail"
               placeholder="RECEIVED BY CHEQUE NO." #ReceivedByDetail="ngModel" required
               [ngClass]="{'is-invalid': ReceivedByDetail.invalid && (ReceivedByDetail.touched || resumeForm.submitted) }">
@@ -243,7 +260,7 @@
 <!-- ================================================================ -->
 
       
-      <div class="col-md-8">
+      <div class="col-md-4">
         <div class="shadow-sm card action-buttons">
 
 
@@ -252,7 +269,13 @@
             <i class="material-icons">
               print
             </i><span>Print PDF</span></button> -->
-            <button 
+            <button class="btn btn-primary d-flex align-items-center justify-content-center" (click)="addRecieptDetails()" *ngIf="!isReceipt">
+                    <i class="material-icons">
+                      save
+                    </i><span>Save</span></button>
+                <!-- for icon help  : https://materializecss.com/icons.html -->
+                  
+            <button  (click)="cleanForm()"
                     class="btn btn-primary d-flex align-items-center justify-content-center"
                     [printStyle]="{
                       h2 : { 'font-size': '1em'},
@@ -264,7 +287,8 @@
                     receipts. Print size should be 44mm,
                     can be changed in ngx-print.component.scss"
                     ngxPrint
-                    >
+                    
+                    *ngIf="isReceipt" >
                     <i class="material-icons">
                       print
                     </i><span>Reciept</span></button>
@@ -359,6 +383,81 @@ ngxPrint
 </i><span>Print PDF</span></button> -->
 <!-- <P>Test</P>
 <sheetjs></sheetjs> -->
+
+
+
+<!-- <div id="table"  >
+<table  style="
+border: 1px;
+">
+ <tr  class="service">
+    <th class="table-item">profilePic           </th>
+    <th class="table-item">address              </th>
+    <th class="table-item">contactNo            </th>
+    <th class="table-item">email                </th>
+    <th class="table-item">socialProfile        </th>
+    <th class="table-item">name                 </th>
+    <th class="table-item">id                   </th>
+    <th class="table-item">recieptDate          </th>
+    <th class="table-item">className            </th>
+    <th class="table-item">section              </th>
+    <th class="table-item">rollNo               </th>
+    <th class="table-item">tuitionFee           </th>
+    <th class="table-item">admissionFee         </th>
+    <th class="table-item">transportFee         </th>
+    <th class="table-item">examinationFee       </th>
+    <th class="table-item">miscellaneousFee     </th>
+    <th class="table-item">prantiyaNidhi        </th>
+    <th class="table-item">compititionFee       </th>
+    <th class="table-item">registrationFee      </th>
+    <th class="table-item">libarayFee           </th>
+    <th class="table-item">otherFee             </th>
+    <th class="table-item">receivedByDetail     </th>
+    <th class="table-item">transactionId        </th>
+    <th class="table-item">paymentReceivedDate  </th>
+    <th class="table-item">bankName             </th>
+    <th class="table-item">amountWord           </th>
+    <th class="table-item">totalAmount          </th> 
+  </tr>
+
+  
+    <tr  class="service"  *ngFor="let recipt of allReceiptDetails ">
+    <td class="table-title">{{recipt.profilePic           }}</td>
+    <td class="table-title">{{recipt.address              }}</td>
+    <td class="table-title">{{recipt.contactNo            }}</td>
+    <td class="table-title">{{recipt.email                }}</td>
+    <td class="table-title">{{recipt.socialProfile        }}</td>
+    <td class="table-title">{{recipt.name                 }}</td>
+    <td class="table-title">{{recipt.id                   }}</td>
+    <td class="table-title">{{recipt.recieptDate          }}</td>
+    <td class="table-title">{{recipt.className            }}</td>
+    <td class="table-title">{{recipt.section              }}</td>
+    <td class="table-title">{{recipt.rollNo               }}</td>
+    <td class="table-title">{{recipt.tuitionFee           }}</td>
+    <td class="table-title">{{recipt.admissionFee         }}</td>
+    <td class="table-title">{{recipt.transportFee         }}</td>
+    <td class="table-title">{{recipt.examinationFee       }}</td>
+    <td class="table-title">{{recipt.miscellaneousFee     }}</td>
+    <td class="table-title">{{recipt.prantiyaNidhi        }}</td>
+    <td class="table-title">{{recipt.compititionFee       }}</td>
+    <td class="table-title">{{recipt.registrationFee      }}</td>
+    <td class="table-title">{{recipt.libarayFee           }}</td>
+    <td class="table-title">{{recipt.otherFee             }}</td>
+    <td class="table-title">{{recipt.receivedByDetail     }}</td>
+    <td class="table-title">{{recipt.transactionId        }}</td>
+    <td class="table-title">{{recipt.paymentReceivedDate  }}</td>
+    <td class="table-title">{{recipt.bankName             }}</td>
+    <td class="table-title">{{recipt.amountWord           }}</td>
+    <td class="table-title">{{recipt.totalAmount          }}</td>
+    <td class="table-title"><button class="btn btn-warning" (click)="editReceiptDetails()">Edit</button></td>
+    <td class="table-title"><button class="btn btn-danger" (click)="deleteReceiptDetails(recipt)">Delete</button></td>
+
+  </tr>
+
+
+
+</table>
+</div> -->
 <div class="invoice-POS" id="invoice-POS" hidden>
 <table>
   <tr>
@@ -400,7 +499,7 @@ ngxPrint
       <table >
         <tr class="table-title">
           <td>
-            Reciept NO: {{resume.receiptNo}}
+            Reciept NO: {{resume1.id}}
           </td>
           <td class="Hours" style="padding-left: 80px;">
             Date: {{resume.recieptDate | date:'dd-MM-yyyy'}}
@@ -440,11 +539,12 @@ ngxPrint
 
         <tr class="service">
           <td class="table-item"><p class="item-text">
-            विकास शुल्क (Tuition Fee)
+            विकास शुल्क (Tuition Fee) : 
+            {{resume.adFromMonth}} - {{resume.adToMonth}}
           </p>
           </td>
           <td class="table-item"><p class="item-text"></p></td>
-          <td class="table-item"><p class="item-text">{{resume.tuitionFee}}</p></td>
+          <td class="table-item"><p class="item-text">{{resume.tuitionFee}} </p></td>
         </tr>
 
         <tr class="service">
@@ -454,7 +554,9 @@ ngxPrint
         </tr>
 
         <tr class="service">
-          <td class="table-item"><p class="item-text">वाहन शुल्क (Transpot Fee)</p></td>
+          <td class="table-item"><p class="item-text">वाहन शुल्क (Transpot Fee) : 
+            {{resume.tsFromMonth}} - {{resume.tsToMonth}}
+          </p></td>
           <td class="table-item"><p class="item-text"></p></td>
           <td class="table-item"><p class="item-text">{{resume.transportFee}}</p></td>
         </tr>
@@ -469,7 +571,7 @@ ngxPrint
           <td class="table-item"><p class="item-text">{{resume.miscellaneousFee}}</p></td>
         </tr>
         <tr class="service">
-          <td class="table-item"><p class="item-text">प्रांतीय निधि (Prantiya Nidhi)</p></td>
+          <td class="table-item"><p class="item-text">प्रांतीय निधि (Activity Fee)</p></td>
           <td class="table-item"><p class="item-text"></p></td>
           <td class="table-item"><p class="item-text">{{resume.prantiyaNidhi}}</p></td>
         </tr>
@@ -499,7 +601,7 @@ ngxPrint
           <td class="table-item"><p class="item-text"></p></td>
         </tr> -->
         <tr class="service">
-          <td class="table-item"><p class="item-text"></p>RECEIVED BY CHEQUE NO : {{resume.receivedByDetail}}</td>
+          <td class="table-item"><p class="item-text"></p>RECEIVED BY  : {{resume.receivedByDetail}}</td>
           
         </tr>
         <tr class="service">
@@ -591,7 +693,7 @@ ngxPrint
         <table>
           <tr class="table-title">
             <td>
-              Reciept NO: {{resume.receiptNo}}
+              Reciept NO: {{resume1.id}}
             </td >
             <td class="Hours" style="padding-left: 80px;">
               Date: {{resume.recieptDate | date:'dd-MM-yyyy' }}
@@ -630,11 +732,12 @@ ngxPrint
   
           <tr class="service">
             <td class="table-item"><p class="item-text">
-              विकास शुल्क (Tuition Fee)
+              विकास शुल्क (Tuition Fee): 
+              {{resume.adFromMonth}} - {{resume.adToMonth}}
             </p>
             </td>
             <td class="table-item"><p class="item-text"></p></td>
-            <td class="table-item"><p class="item-text">{{resume.tuitionFee}}</p></td>
+            <td class="table-item"><p class="item-text">{{resume.tuitionFee}} </p></td>
           </tr>
   
           <tr class="service">
@@ -644,7 +747,9 @@ ngxPrint
           </tr>
   
           <tr class="service">
-            <td class="table-item"><p class="item-text">वाहन शुल्क (Transpot Fee)</p></td>
+            <td class="table-item"><p class="item-text">वाहन शुल्क (Transpot Fee) : 
+              {{resume.tsFromMonth}} - {{resume.tsToMonth}}
+            </p></td>
             <td class="table-item"><p class="item-text"></p></td>
             <td class="table-item"><p class="item-text">{{resume.transportFee}}</p></td>
           </tr>
@@ -659,7 +764,7 @@ ngxPrint
             <td class="table-item"><p class="item-text">{{resume.miscellaneousFee}}</p></td>
           </tr>
           <tr class="service">
-            <td class="table-item"><p class="item-text">प्रांतीय निधि (Prantiya Nidhi)</p></td>
+            <td class="table-item"><p class="item-text">प्रांतीय निधि (Activity Fee)</p></td>
             <td class="table-item"><p class="item-text"></p></td>
             <td class="table-item"><p class="item-text">{{resume.prantiyaNidhi}}</p></td>
           </tr>
@@ -689,7 +794,7 @@ ngxPrint
             <td class="table-item"><p class="item-text"></p></td>
           </tr> -->
           <tr class="service">
-            <td class="table-item"><p class="item-text"></p>RECEIVED BY CHEQUE NO : {{resume.receivedByDetail}}</td>
+            <td class="table-item"><p class="item-text"></p>RECEIVED BY : {{resume.receivedByDetail}}</td>
             
           </tr>
           <tr class="service">
